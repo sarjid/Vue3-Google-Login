@@ -18,7 +18,7 @@ const callback = (response) => {
       </li>
 
       <li>
-        <a href="">Name: {{ user?.email }}</a>
+        <a href="">Email: {{ user?.email }}</a>
       </li>
 
       <li>
