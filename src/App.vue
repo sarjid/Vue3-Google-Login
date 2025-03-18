@@ -11,7 +11,10 @@ const callback = (response) => {
 
 <template>
   <div>
-    <GoogleLogin :callback="callback"  />
+    <GoogleLogin :callback="callback" />
+    <div>
+      <img :src="user?.picture" class="picture" alt="">
+    </div>
     <ul v-if="user">
       <li>
         <a href="">Name: {{ user?.name }}</a>
@@ -21,11 +24,8 @@ const callback = (response) => {
         <a href="">Email: {{ user?.email }}</a>
       </li>
 
-      <li>
-        <a href="">
-          <img :src="user?.picture" class="logo" alt="">
-        </a>
-      </li>
+        
+    
     </ul>
   </div>
 
@@ -40,9 +40,19 @@ const callback = (response) => {
   padding-top: 10px;
   transition: filter 300ms;
 }
+
+.picture {
+  height: 5em;
+  will-change: filter;
+  padding-top: 10px;
+  transition: filter 300ms;
+}
+
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
 }
